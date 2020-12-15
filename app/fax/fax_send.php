@@ -750,6 +750,10 @@ if (!function_exists('fax_split_dtmf')) {
 		$tmp_dial_string .= "fax_ident='"                    . $fax_caller_id_number    . "',";
 		$tmp_dial_string .= "fax_header='"                   . $fax_caller_id_name      . "',";
 		$tmp_dial_string .= "fax_file='"                     . $fax_file                . "',";
+		// For Extra Fax Variables
+		$tmp_dial_string .= "fax_subject='"                  . $fax_subject             . "',";
+		$tmp_dial_string .= "fax_message='"                  . $fax_message             . "',";
+
 		foreach ($fax_numbers as $fax_number) {
 
 			$fax_number = trim($fax_number);

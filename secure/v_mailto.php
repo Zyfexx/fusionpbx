@@ -391,6 +391,33 @@
 	}
 	else {
 		echo "Message sent!";
+
+		if (!isset($email_log_uuid)) {
+			//build insert array
+				$email_log_uuid = uuid();
+				$array['email_logs'][0]['email_log_uuid'] = $email_log_uuid;
+				if (is_uuid($call_uuid)) {
+					$array['email_logs'][0]['call_uuid'] = $call_uuid;
+				}
+				$array['email_logs'][0]['domain_uuid'] = $headers["X-FusionPBX-Domain-UUID"];
+				$array['email_logs'][0]['sent_date'] = 'now()';
+				$array['email_logs'][0]['type'] = $headers["X-FusionPBX-Email-Type"];
+				$array['email_logs'][0]['status'] = 'sent';
+				$array['email_logs'][0]['email'] = str_replace("'", "''", $msg);
+			//grant temporary permissions
+				$p = new permissions;
+				$p->add('email_log_add', 'temp');
+			//execute insert
+				$database = new database;
+				$database->app_name = 'v_mailto';
+				$database->app_uuid = 'ba41954e-9d21-4b10-bbc2-fa5ceabeb184';
+				$database->save($array);
+				unset($array);
+			//revoke temporary permissions
+				$p->delete('email_log_add', 'temp');
+		}
+
+		echo "Retained in v_email_logs as email_log_uuid = ".$email_log_uuid."\n";
 	}
 
 //get and save the output from the buffer

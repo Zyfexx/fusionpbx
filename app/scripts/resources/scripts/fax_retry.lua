@@ -91,6 +91,10 @@
 	fax_busy_attempts = tonumber(env:getHeader("fax_busy_attempts"));
 	hangup_cause_q850 = tonumber(env:getHeader("hangup_cause_q850"));
 
+	-- Added Variables
+	fax_subject = env:getHeader("fax_subject");
+	fax_message = env:getHeader("fax_message");
+
 --set default values
 	default_language = 'en';
 	default_dialect = 'us';
@@ -114,6 +118,14 @@
 	end
 	if (not fax_result_text) then
 		fax_result_text = "FS_NOT_SET";
+	end
+
+	-- For Added Variables
+	if (not fax_subject) then
+		fax_subject = " ";
+	end
+	if (not fax_message) then
+		fax_message = " ";
 	end
 
 --get the values from the fax file
@@ -347,6 +359,13 @@
 			email_subject_success_default = email_subject_success_default:gsub("${fax_busy_attempts}", fax_busy_attempts);
 			email_body_success_default = email_body_success_default:gsub("${number_dialed}", number_dialed);
 			email_body_success_default = email_body_success_default:gsub("${fax_busy_attempts}", fax_busy_attempts);
+
+			-- For Added Variables
+			email_body_success_default = email_body_success_default:gsub("${fax_subject}", fax_subject);
+			email_body_success_default = email_body_success_default:gsub("${fax_message}", fax_message);
+			email_body_success_default = email_body_success_default:gsub("${fax_result_text}", tostring(fax_result_text));
+			email_body_success_default = email_body_success_default:gsub("${fax_date}", tostring(os.date("%Y-%m-%d %X")));
+
 		end
 		if (row["template_subcategory"] == 'fail_default') then
 			email_subject_fail_default = row["template_subject"];
@@ -356,6 +375,12 @@
 			email_subject_fail_default = email_subject_fail_default:gsub("${fax_busy_attempts}", fax_busy_attempts);
 			email_body_fail_default = email_body_fail_default:gsub("${number_dialed}", number_dialed);
 			email_body_fail_default = email_body_fail_default:gsub("${fax_busy_attempts}", fax_busy_attempts);
+
+			-- For Added Variables
+			email_body_fail_default = email_body_fail_default:gsub("${fax_subject}", fax_subject);
+			email_body_fail_default = email_body_fail_default:gsub("${fax_message}", fax_message);
+			email_body_fail_default = email_body_fail_default:gsub("${fax_result_text}", tostring(fax_result_text));
+			email_body_fail_default = email_body_fail_default:gsub("${fax_date}", tostring(os.date("%Y-%m-%d %X")));
 		end
 		if (row["template_subcategory"] == 'fail_busy') then
 			email_subject_fail_busy = row["template_subject"];
@@ -365,6 +390,12 @@
 			email_subject_fail_busy = email_subject_fail_busy:gsub("${fax_busy_attempts}", fax_busy_attempts);
 			email_body_fail_busy = email_body_fail_busy:gsub("${number_dialed}", number_dialed);
 			email_body_fail_busy = email_body_fail_busy:gsub("${fax_busy_attempts}", fax_busy_attempts);
+
+			-- For Added Variables
+			email_body_fail_busy = email_body_fail_busy:gsub("${fax_subject}", fax_subject);
+			email_body_fail_busy = email_body_fail_busy:gsub("${fax_message}", fax_message);
+			email_body_fail_busy = email_body_fail_busy:gsub("${fax_result_text}", tostring(fax_result_text));
+			email_body_fail_busy = email_body_fail_busy:gsub("${fax_date}", tostring(os.date("%Y-%m-%d %X")));
 		end
 		if (row["template_subcategory"] == 'fail_invalid') then
 			email_subject_fail_invalid = row["template_subject"];
@@ -374,6 +405,12 @@
 			email_subject_fail_invalid = email_subject_fail_invalid:gsub("${fax_busy_attempts}", fax_busy_attempts);
 			email_body_fail_invalid = email_body_fail_invalid:gsub("${number_dialed}", number_dialed);
 			email_body_fail_invalid = email_body_fail_invalid:gsub("${fax_busy_attempts}", fax_busy_attempts);
+
+			-- For Added Variables
+			email_body_fail_invalid = email_body_fail_invalid:gsub("${fax_subject}", fax_subject);
+			email_body_fail_invalid = email_body_fail_invalid:gsub("${fax_message}", fax_message);
+			email_body_fail_invalid = email_body_fail_invalid:gsub("${fax_result_text}", tostring(fax_result_text));
+			email_body_fail_invalid = email_body_fail_invalid:gsub("${fax_date}", tostring(os.date("%Y-%m-%d %X")));
 		end
 	end);
 
