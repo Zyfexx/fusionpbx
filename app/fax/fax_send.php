@@ -750,7 +750,7 @@ if (!function_exists('fax_split_dtmf')) {
 		$fax_subject = str_replace("^", "_", $fax_subject);
 		$fax_subject = str_replace("`", "_", $fax_subject);
 		$fax_subject = str_replace("~", "_", $fax_subject);
-		$fax_subject = str_replace("&", "and", $fax_subject);
+		$fax_subject = str_replace("&", "_", $fax_subject);
 		$fax_subject = str_replace("(", "_", $fax_subject);
 		$fax_subject = str_replace(")", "_", $fax_subject);
 		$fax_subject = str_replace("+", "_", $fax_subject);
@@ -768,7 +768,7 @@ if (!function_exists('fax_split_dtmf')) {
 		$fax_message = str_replace("^", "_", $fax_message);
 		$fax_message = str_replace("`", "_", $fax_message);
 		$fax_message = str_replace("~", "_", $fax_message);
-		$fax_message = str_replace("&", "and", $fax_message);
+		$fax_message = str_replace("&", "_", $fax_message);
 		$fax_message = str_replace("(", "_", $fax_message);
 		$fax_message = str_replace(")", "_", $fax_message);
 		$fax_message = str_replace("+", "_", $fax_message);

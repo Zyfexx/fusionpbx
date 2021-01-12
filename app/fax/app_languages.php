@@ -1093,6 +1093,9 @@ $text['label-fax_file']['ru-ru'] = "Файл";
 $text['label-fax_file']['sv-se'] = "Fil Bana";
 $text['label-fax_file']['uk-ua'] = "";
 
+$text['label-fax_subject']['en-us'] = "Subject";
+$text['label-fax_message']['en-us'] = "Message";
+
 $text['label-fax_epoch']['en-us'] = "Epoch";
 $text['label-fax_epoch']['en-gb'] = "Epoch";
 $text['label-fax_epoch']['ar-eg'] = "";

@@ -98,6 +98,8 @@
 			$fax_uri = $row["fax_uri"];
 			$fax_date = $row["fax_date"];
 			$fax_epoch = $row["fax_epoch"];
+			$fax_subject = $row["fax_subject"];
+			$fax_message = $row["fax_message"];
 		}
 		unset($sql, $parameters, $row);
 	}
@@ -218,6 +220,16 @@
 	echo "<tr>\n";
 	echo "<td class='vncell' valign='top' nowrap='nowrap'>".$text['label-fax_epoch']."</td>\n";
 	echo "<td class='vtable'>".escape($fax_epoch)."</td>\n";
+	echo "</tr>\n";
+
+	echo "<tr>\n";
+	echo "<td class='vncell' valign='top' nowrap='nowrap'>".$text['label-fax_subject']."</td>\n";
+	echo "<td class='vtable'>".escape($fax_subject)."</td>\n";
+	echo "</tr>\n";
+
+	echo "<tr>\n";
+	echo "<td class='vncell' valign='top' nowrap='nowrap'>".$text['label-fax_message']."</td>\n";
+	echo "<td class='vtable'>".escape($fax_message)."</td>\n";
 	echo "</tr>\n";
 
 	echo "</table>";
