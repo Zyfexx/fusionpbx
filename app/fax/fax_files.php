@@ -274,6 +274,12 @@
 	if ($_REQUEST['box'] == 'sent') {
 		echo th_order_by('fax_destination', $text['label-fax_destination'], $order_by, $order, "&id=".$fax_uuid."&box=".$_GET['box']."&page=".$_GET['page']);
 	}
+	if ($_REQUEST['box'] == 'sent') {
+		echo th_order_by('fax_subject', $text['label-fax_subject'], $order_by, $order, "&id=".$fax_uuid."&box=".$_GET['box']."&page=".$_GET['page']);
+	}
+	if ($_REQUEST['box'] == 'sent') {
+		echo th_order_by('fax_message', $text['label-fax_message'], $order_by, $order, "&id=".$fax_uuid."&box=".$_GET['box']."&page=".$_GET['page']);
+	}
 	echo "<th>".$text['table-file']."</th>\n";
 	echo "<th width='10%'>".$text['table-view']."</th>\n";
 	echo th_order_by('fax_date', $text['label-fax_date'], $order_by, $order, "&id=".$fax_uuid."&box=".$_GET['box']."&page=".$_GET['page']);
