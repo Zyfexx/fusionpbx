@@ -271,8 +271,6 @@
 	}
 	echo th_order_by('fax_caller_id_name', $text['label-fax_caller_id_name'], $order_by, $order, "&id=".$fax_uuid."&box=".$_GET['box']."&page=".$_GET['page']);
 	echo th_order_by('fax_caller_id_number', $text['label-fax_caller_id_number'], $order_by, $order, "&id=".$fax_uuid."&box=".$_GET['box']."&page=".$_GET['page']);
-	echo th_order_by('fax_subject', $text['label-fax_subject'], $order_by, $order, "&id=".$fax_uuid."&box=".$_GET['box']."&page=".$_GET['page']);
-	echo th_order_by('fax_message', $text['label-fax_message'], $order_by, $order, "&id=".$fax_uuid."&box=".$_GET['box']."&page=".$_GET['page']);
 	if ($_REQUEST['box'] == 'sent') {
 		echo th_order_by('fax_destination', $text['label-fax_destination'], $order_by, $order, "&id=".$fax_uuid."&box=".$_GET['box']."&page=".$_GET['page']);
 	}
@@ -375,6 +373,12 @@
 			echo "	<td>".escape(format_phone($row['fax_caller_id_number']))."&nbsp;</td>\n";
 			if ($_REQUEST['box'] == 'sent') {
 				echo "	<td>".escape(format_phone($row['fax_destination']))."&nbsp;</td>\n";
+			}
+			if ($_REQUEST['box'] == 'sent') {
+				echo "	<td>".escape($row['fax_subject'])."&nbsp;</td>\n";
+			}
+			if ($_REQUEST['box'] == 'sent') {
+				echo "	<td>".escape($row['fax_message'])."&nbsp;</td>\n";
 			}
 			echo "  <td><a href='".$list_row_url."'>".$file_name."</a></td>\n";
 			echo "  <td class='no-link'>\n";
