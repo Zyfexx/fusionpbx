@@ -232,7 +232,13 @@
 	end
 	sql = sql .. "fax_uri, ";
 	sql = sql .. "fax_date, ";
-	sql = sql .. "fax_epoch ";
+	sql = sql .. "fax_epoch, ";
+	if (fax_subject ~= nil) then
+		sql = sql .. "fax_subject, ";
+	end
+	if (fax_message ~= nil) then
+		sql = sql .. "fax_message ";
+	end
 	sql = sql .. ") ";
 	sql = sql .. "values ";
 	sql = sql .. "(";
@@ -447,6 +453,8 @@
 			table.insert(sql, "fax_caller_id_number, ");
 			table.insert(sql, "fax_date, ");
 			table.insert(sql, "fax_epoch, ");
+			table.insert(sql, "fax_subject, ");
+			table.insert(sql, "fax_message, ");
 			if (storage_type == "base64") then
 				table.insert(sql, "fax_base64, ");
 			end
