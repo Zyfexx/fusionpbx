@@ -174,8 +174,8 @@
 	echo th_order_by('fax_bad_rows', $text['label-fax_bad_rows'], $order_by, $order, null, null, "&id=".$fax_uuid);
 	echo th_order_by('fax_transfer_rate', $text['label-fax_transfer_rate'], $order_by, $order, null, null, "&id=".$fax_uuid);
 	echo th_order_by('fax_retry_attempts', $text['label-fax_retry_attempts'], $order_by, $order, null, null, "&id=".$fax_uuid);
-	//echo th_order_by('fax_retry_limit', $text['label-fax_retry_limit'], $order_by, $order);
-	//echo th_order_by('fax_retry_sleep', $text['label-fax_retry_sleep'], $order_by, $order);
+	echo th_order_by('fax_subject', $text['label-fax_subject'], $order_by, $order);
+	echo th_order_by('fax_message', $text['label-fax_message'], $order_by, $order);
 	echo th_order_by('fax_uri', $text['label-fax_destination'], $order_by, $order, null, null, "&id=".$fax_uuid);
 	//echo th_order_by('fax_epoch', $text['label-fax_epoch'], $order_by, $order);
 	if ($_SESSION['theme']['list_row_edit_button']['boolean'] == 'true') {
@@ -208,8 +208,8 @@
 			echo "	<td>".$row['fax_bad_rows']."&nbsp;</td>\n";
 			echo "	<td>".$row['fax_transfer_rate']."&nbsp;</td>\n";
 			echo "	<td>".$row['fax_retry_attempts']."&nbsp;</td>\n";
-			//echo "	<td>".$row['fax_retry_limit']."&nbsp;</td>\n";
-			//echo "	<td>".$row['fax_retry_sleep']."&nbsp;</td>\n";
+			echo "	<td>".$row['fax_subject']."&nbsp;</td>\n";
+			echo "	<td>".$row['fax_message']."&nbsp;</td>\n";
 			echo "	<td>".basename($row['fax_uri'])."&nbsp;</td>\n";
 			//echo "	<td>".$row['fax_epoch']."&nbsp;</td>\n";
 			if ($_SESSION['theme']['list_row_edit_button']['boolean'] == 'true') {
