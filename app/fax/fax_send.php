@@ -738,6 +738,42 @@ if (!function_exists('fax_split_dtmf')) {
 			$mailto_address = $mailto_address_user;
 		}
 
+		// Remove special character because of Lua
+		$fax_subject = str_replace(";", "_", $fax_subject);
+		$fax_subject = str_replace(",", "_", $fax_subject);
+		$fax_subject = str_replace("'", "_", $fax_subject);
+		$fax_subject = str_replace("!", "_", $fax_subject);
+		$fax_subject = str_replace("@", "_", $fax_subject);
+		$fax_subject = str_replace("#", "_", $fax_subject);
+		$fax_subject = str_replace("$", "_", $fax_subject);
+		$fax_subject = str_replace("%", "_", $fax_subject);
+		$fax_subject = str_replace("^", "_", $fax_subject);
+		$fax_subject = str_replace("`", "_", $fax_subject);
+		$fax_subject = str_replace("~", "_", $fax_subject);
+		$fax_subject = str_replace("&", "and", $fax_subject);
+		$fax_subject = str_replace("(", "_", $fax_subject);
+		$fax_subject = str_replace(")", "_", $fax_subject);
+		$fax_subject = str_replace("+", "_", $fax_subject);
+		$fax_subject = str_replace("=", "_", $fax_subject);
+
+		// Remove special character because of Lua
+		$fax_message = str_replace(";", "_", $fax_message);
+		$fax_message = str_replace(",", "_", $fax_message);
+		$fax_message = str_replace("'", "_", $fax_message);
+		$fax_message = str_replace("!", "_", $fax_message);
+		$fax_message = str_replace("@", "_", $fax_message);
+		$fax_message = str_replace("#", "_", $fax_message);
+		$fax_message = str_replace("$", "_", $fax_message);
+		$fax_message = str_replace("%", "_", $fax_message);
+		$fax_message = str_replace("^", "_", $fax_message);
+		$fax_message = str_replace("`", "_", $fax_message);
+		$fax_message = str_replace("~", "_", $fax_message);
+		$fax_message = str_replace("&", "and", $fax_message);
+		$fax_message = str_replace("(", "_", $fax_message);
+		$fax_message = str_replace(")", "_", $fax_message);
+		$fax_message = str_replace("+", "_", $fax_message);
+		$fax_message = str_replace("=", "_", $fax_message);
+
 		//send the fax
 		$fax_file = $dir_fax_temp."/".$fax_instance_uuid.".tif";
 		$tmp_dial_string  = "for_fax=1,";
