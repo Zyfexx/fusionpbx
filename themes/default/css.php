@@ -2629,10 +2629,6 @@ header('Expires: '.gmdate('D, d M Y H:i:s',time()+3600).' GMT');
 		padding: <?php echo ($_SESSION['theme']['table_row_padding']['text'] != '') ? $_SESSION['theme']['table_row_padding']['text'] : '4px 7px'; ?>;
 		}
 
-	.list-row > td.description {
-		background: <?php echo ($_SESSION['theme']['table_row_background_color_medium']['text'] != '') ? $_SESSION['theme']['table_row_background_color_medium']['text'] : '#f0f2f6'; ?> !important;
-		}
-
 	.list-header > .checkbox,
 	.list-row > .checkbox {
 		width: 1%;
