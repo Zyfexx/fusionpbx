@@ -1133,4 +1133,6 @@
 		{/if}
 
 </body>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Istok+Web&display=swap" rel="stylesheet">
 </html>
