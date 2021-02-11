@@ -675,8 +675,8 @@
 		$apps[$x]['default_settings'][$y]['default_setting_category'] = "theme";
 		$apps[$x]['default_settings'][$y]['default_setting_subcategory'] = "heading_text_color";
 		$apps[$x]['default_settings'][$y]['default_setting_name'] = "text";
-		$apps[$x]['default_settings'][$y]['default_setting_value'] = "#952424";
-		$apps[$x]['default_settings'][$y]['default_setting_enabled'] = "false";
+		$apps[$x]['default_settings'][$y]['default_setting_value'] = "#dc3545";
+		$apps[$x]['default_settings'][$y]['default_setting_enabled'] = "true";
 		$apps[$x]['default_settings'][$y]['default_setting_description'] = "Set the color (and opacity) of the page heading text.";
 		$y++;
 		$apps[$x]['default_settings'][$y]['default_setting_uuid'] = "1842e283-13c5-4927-9b89-2cf5f5acea07";
@@ -2355,8 +2355,8 @@
 		$apps[$x]['default_settings'][$y]['default_setting_category'] = "theme";
 		$apps[$x]['default_settings'][$y]['default_setting_subcategory'] = "modal_title_color";
 		$apps[$x]['default_settings'][$y]['default_setting_name'] = "text";
-		$apps[$x]['default_settings'][$y]['default_setting_value'] = "#952424";
-		$apps[$x]['default_settings'][$y]['default_setting_enabled'] = "false";
+		$apps[$x]['default_settings'][$y]['default_setting_value'] = "#dc3545";
+		$apps[$x]['default_settings'][$y]['default_setting_enabled'] = "true";
 		$apps[$x]['default_settings'][$y]['default_setting_description'] = "";
 		$y++;
 		$apps[$x]['default_settings'][$y]['default_setting_uuid'] = "71e10424-e53c-4ade-a4e9-d8d0b1290d11";
